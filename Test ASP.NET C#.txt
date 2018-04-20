@@ -34,4 +34,3 @@ Valid, Invalid, NotSpecified (as default).
 - Valid in all other cases
 Visualize the result 
 
-            /*<!-- new { @class = "control-label col-md-2" })-->*/
