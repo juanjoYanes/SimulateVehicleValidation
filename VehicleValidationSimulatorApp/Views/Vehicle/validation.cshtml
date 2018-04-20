@@ -1,0 +1,70 @@
+﻿@model VehicleValidationSimulatorApp.Models.Vehicle.VehicleRequest
+
+@{
+    ViewBag.Title = "Vehicle Validation Simulator";
+}
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+
+        @Html.ValidationSummary(true) 
+        <br />
+        <div class="form-horizontal">
+            <h4>Vehicle Validation Simulator</h4>
+            <hr />
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VehicleId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VehicleId)
+                @Html.ValidationMessageFor(model => model.VehicleId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type)
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.ManufacturerNameShort, new { @class = "control-label col-md-2" })
+
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ManufacturerNameShort)
+                @Html.ValidationMessageFor(model => model.ManufacturerNameShort)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+        </div>
+        }
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button id="btnValidateVehicle" class="btn btn-default">Validate</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="responsevehiclevalidation" class="col-md-12 alert-info"></div>
+        </div>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/Vehicle/validation.js"></script>
+
