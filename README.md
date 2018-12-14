@@ -37,6 +37,3 @@ Valid, Invalid, NotSpecified (as default).
 - Invalid, when any of the values is null or empty
 - Valid in all other cases
 Visualize the result 
-
-
-
